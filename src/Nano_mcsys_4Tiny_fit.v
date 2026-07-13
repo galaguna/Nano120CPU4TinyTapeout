@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 //=============================================================================
 // Entidad Nano_mcsys_4Tiny_fit, que cabe en 8x2 tiles de Tiny Tapeout, 
-// con CPU Nano, con memoria minima (32x16 RAM; 256x8 ROM; 16x16 Stack),
+// con CPU Nano, con memoria minima (32x16 RAM; 128x8 ROM; 16x16 Stack),
 // comunicacion SPI y bloques perifericos para operar con interrupciones.
 //  En esta version:
 //  * La entrada de reset (NRST) es activa en bajo.
@@ -16,7 +16,7 @@
 // Author: Gerardo A. Laguna S.
 // Universidad Autonoma Metropolitana
 // Unidad Lerma
-// 13.dic.2025
+// 13.jul.2026
 //=============================================================================
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -98,11 +98,11 @@ module Nano_mcsys_4Tiny
     sync_ram #(.DATA_WIDTH(16), .ADD_WIDTH(5)) my_ram
     (.clk(mxd_mem_clk), .we(mxd_ram_we), .datain(mxd_ram_din), .address(mxd_ram_add[4:0]), .dataout(cpu2ram_dout));
 
-    sync_ram #(.DATA_WIDTH(8), .ADD_WIDTH(7)) my_top_rom
-    (.clk(mxd_mem_clk), .we(top_rom_we), .datain(mxd_rom_din), .address(mxd_rom_add[6:0]), .dataout(top_rom_dout));
+    sync_ram #(.DATA_WIDTH(8), .ADD_WIDTH(6)) my_top_rom
+    (.clk(mxd_mem_clk), .we(top_rom_we), .datain(mxd_rom_din), .address(mxd_rom_add[5:0]), .dataout(top_rom_dout));
 
-    sync_ram #(.DATA_WIDTH(8), .ADD_WIDTH(7)) my_bottom_rom
-    (.clk(mxd_mem_clk), .we(bottom_rom_we), .datain(mxd_rom_din), .address(mxd_rom_add[6:0]), .dataout(bottom_rom_dout));
+    sync_ram #(.DATA_WIDTH(8), .ADD_WIDTH(6)) my_bottom_rom
+    (.clk(mxd_mem_clk), .we(bottom_rom_we), .datain(mxd_rom_din), .address(mxd_rom_add[5:0]), .dataout(bottom_rom_dout));
 
     sync_ram #(.DATA_WIDTH(16), .ADD_WIDTH(4)) my_stack
     (.clk(mem_clk), .we(cpu2stk_we), .datain(cpu2stk_din), .address(cpu2stk_add[3:0]), .dataout(cpu2stk_dout));
