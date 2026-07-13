@@ -11,12 +11,12 @@
 //
 //=============================================================================
 // *Codigo para el componente slave_spi4nano*
-// Version validada con OpenLane e iVerilog/cocotb
+// Version validada con verilator de OpenRoad, OpenLane e iVerilog/cocotb
 //=============================================================================
 // Author: Gerardo Laguna
 // UAM lerma
 // Mexico
-// 15/12/2025
+// 13/julio/2026
 //=============================================================================
 
 module slave_spi4nano
@@ -301,7 +301,10 @@ module slave_spi4nano
                
             else
                state_next = idle1;
-            
+         default: 
+          begin 
+               state_next = state_reg;
+          end
       endcase
    end
 
@@ -335,7 +338,10 @@ module slave_spi4nano
           end
          write_ram :
             dwe_buf_next = 1'b1;         
-
+         default: 
+          begin 
+            // This explicitly does nothing
+          end
       endcase
    end
 

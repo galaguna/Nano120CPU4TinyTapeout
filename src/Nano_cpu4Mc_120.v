@@ -10,7 +10,7 @@
 // Author: Gerardo Laguna
 // UAM lerma
 // Mexico
-// 9/julio/2026
+// 13/julio/2026
 //=============================================================================
 
 module Nano_cpu
@@ -49,11 +49,11 @@ module Nano_cpu
 
    // symbolic state declaration
    localparam [7:0]
-      stop = 			8'h00,
-      start = 			8'h01, 
-      fetch_decode = 	8'h02, 
-      load_ha_jmp = 	8'h03, 
-      load_la_jmp = 	8'h04, 
+    stop = 			8'h00,
+    start = 		8'h01, 
+    fetch_decode = 	8'h02, 
+    load_ha_jmp = 	8'h03, 
+    load_la_jmp = 	8'h04, 
   	load_ip = 		8'h05,
    	jz16_exe = 		8'h06,
    	jz32_exe = 		8'h07,
@@ -61,10 +61,10 @@ module Nano_cpu
    	jn32_exe = 		8'h09,
    	jo16_exe = 		8'h0A,
    	jo32_exe = 		8'h0B,
-   	jco16_exe = 		8'h0C,
-   	jco32_exe = 		8'h0D,
-   	load_ha_call  = 	8'h0E,
-   	load_la_call  = 	8'h0F,
+   	jco16_exe = 	8'h0C,
+   	jco32_exe = 	8'h0D,
+   	load_ha_call  = 8'h0E,
+   	load_la_call  = 8'h0F,
    	push_ip = 		8'h10,
    	pop_ip_ini  = 	8'h11,
    	pop_ip  = 		8'h12,
@@ -72,7 +72,7 @@ module Nano_cpu
    	pusha_exe = 	8'h14,
    	pushb_exe = 	8'h15,
    	dec_spx = 		8'h16,
-   	point_spx = 		8'h17,
+   	point_spx = 	8'h17,
    	popa_exe = 		8'h18,
    	popb_exe = 		8'h19,
    	load_khx = 		8'h1A,
@@ -80,27 +80,27 @@ module Nano_cpu
    	store_ka = 		8'h1C,
    	store_kb = 		8'h1D,
    	load_usp = 		8'h1E,
-   	load_hi_movxm= 8'h1F,
+   	load_hi_movxm = 8'h1F,
    	load_li_movxm = 8'h20,
-   	load_dp_movxm=8'h21,
+   	load_dp_movxm = 8'h21,
    	movam_exe = 	8'h22,
    	movbm_exe = 	8'h23,
    	movrlm_exe = 	8'h24,
    	movrhm_exe = 	8'h25,
-   	load_hi_movmx=8'h26,
-   	load_li_movmx= 	8'h27,
-   	load_dp_movmx=8'h28,
+   	load_hi_movmx = 8'h26,
+   	load_li_movmx =	8'h27,
+   	load_dp_movmx = 8'h28,
    	movma_exe = 	8'h29,
    	movmb_exe = 	8'h2A,
-   	load_hi_movi  = 	8'h2B,
-   	load_li_movi  = 	8'h2C,
+   	load_hi_movi = 	8'h2B,
+   	load_li_movi = 	8'h2C,
    	load_dp_movi = 	8'h2D,
    	load_ix = 		8'h2E,
    	movia_exe = 	8'h2F,
    	movib_exe = 	8'h30,
    	movaipp_exe  = 	8'h31,
    	movbipp_exe  = 	8'h32,
-   	movrlipp_exe  = 	8'h33,
+   	movrlipp_exe = 	8'h33,
    	movrhipp_exe = 	8'h34,
    	ix_inc  = 		8'h35,
    	ix_sto  = 		8'h36,
@@ -120,27 +120,27 @@ module Nano_cpu
    	add_result  = 	8'h44,
    	cmp_result  = 	8'h45,
    	xmul_exe = 		8'h46,
-   	sxacc_exe = 		8'h47,
-   	log_result = 		8'h48,
+   	sxacc_exe = 	8'h47,
+   	log_result = 	8'h48,
    	store_ki = 		8'h49,
    	store_kj = 		8'h4A,
    	store_kn = 		8'h4B,
    	store_km = 		8'h4C,
-   	pushi_exe = 		8'h4D,
-   	pushj_exe = 		8'h4E,
+   	pushi_exe = 	8'h4D,
+   	pushj_exe = 	8'h4E,
    	pushn_exe = 	8'h4F,
    	pushm_exe = 	8'h50,
    	popi_exe = 		8'h51,
    	popj_exe = 		8'h52,
    	popn_exe = 		8'h53,
-   	popm_exe = 	8'h54,
+   	popm_exe = 	    8'h54,
    	load_xpp = 		8'h55,
-   	load_xmm = 	8'h56,
+   	load_xmm = 	    8'h56,
    	movxrm = 		8'h57,
    	load_y = 		8'h58,
    	cmp_xy = 		8'h59,
-   	jnz16_exe = 		8'h5A,
-   	jnz32_exe = 		8'h5B,
+   	jnz16_exe = 	8'h5A,
+   	jnz32_exe = 	8'h5B,
    	jp16_exe = 		8'h5C,
    	jp32_exe = 		8'h5D,
    	jno16_exe = 	8'h5E,
@@ -154,30 +154,30 @@ module Nano_cpu
    	ld_ioadd4k = 	8'h66,
    	outk_exe = 		8'h67,
    	ini_iss = 		8'h68,
-   	in_intx_F = 		8'h69,
-   	set_int0_F = 		8'h6A,
-   	set_int1_F = 		8'h6B,
-   	set_int2_F = 		8'h6C,
-   	ld_iss_vec = 		8'h6D,
+   	in_intx_F = 	8'h69,
+   	set_int0_F = 	8'h6A,
+   	set_int1_F = 	8'h6B,
+   	set_int2_F = 	8'h6C,
+   	ld_iss_vec = 	8'h6D,
    	push_ip_int = 	8'h6E,
    	push_rl = 		8'h6F,
    	push_rh = 		8'h70,
    	push_f = 		8'h71,
-   	pop_f = 			8'h72,
+   	pop_f = 		8'h72,
    	pop_rh_ini = 	8'h73,
    	pop_rh = 		8'h74,
-   	pop_rl_ini = 		8'h75,
+   	pop_rl_ini = 	8'h75,
    	pop_rl_nres = 	8'h76;
 
    // symbolic opcode declaration
    localparam [7:0]
    	nop_code  = 		8'h00, //No op.
    	jmp_code  = 		8'h01, //Inconditional jump
-   	jz16_code = 			8'h02, //Jump if zero for 16 bits word
+   	jz16_code = 		8'h02, //Jump if zero for 16 bits word
    	jn16_code = 		8'h03, //Jump if negative for 16 bits word
    	jo16_code = 		8'h04, //Jump if aritmetic overflow for 16 bits word
    	jco16_code = 		8'h05, //Jump if catastrofic aritmetic overflow for 16 bits word
-   	jz32_code = 			8'h06, //Jump if zero for 32 bits word
+   	jz32_code = 		8'h06, //Jump if zero for 32 bits word
    	jn32_code = 		8'h07, //Jump if negative for 32 bits word
    	jo32_code = 		8'h08, //Jump if aritmetic overflow for 32 bits word
    	jco32_code = 		8'h09, //Jump if catastrofic aritmetic overflow for 32 bits word
@@ -189,9 +189,9 @@ module Nano_cpu
    	jp32_code = 		8'h0F, //Jump if positive for 32 bits word
    	jno32_code = 		8'h10, //Jump if not aritmetic overflow for 32 bits word
    	jnco32_code = 		8'h11, //Jump if not catastrofic aritmetic overflow for 32 bits word
-   	call_code = 			8'h12, //Call
-   	ret_code  = 			8'h13, //Return from call
-   	reti_code  = 			8'h14, //Return from interrupt
+   	call_code = 		8'h12, //Call
+   	ret_code  = 		8'h13, //Return from call
+   	reti_code  = 		8'h14, //Return from interrupt
    	pusha_code = 		8'h15, //Push A
    	pushb_code = 		8'h16, //Push B
    	pushi_code = 		8'h17, //Push I
@@ -200,7 +200,7 @@ module Nano_cpu
    	pushm_code = 		8'h1A, //Push M
    	popa_code = 		8'h1B, //Pop A
    	popb_code = 		8'h1C, //Pop B
-   	popi_code = 			8'h1D, //Pop I
+   	popi_code = 		8'h1D, //Pop I
    	popj_code = 		8'h1E, //Pop J
    	popn_code = 		8'h1F, //Pop N
    	popm_code = 		8'h20, //Pop M
@@ -234,7 +234,7 @@ module Nano_cpu
    	movkb_code = 		8'h3C, //MOV k, B
    	movki_code = 		8'h3D, //MOV k, I
    	movkj_code = 		8'h3E, //MOV k, J
-    	movkn_code = 		8'h3F, //MOV k, N
+    	movkn_code = 	8'h3F, //MOV k, N
    	movkm_code = 		8'h40, //MOV k, M
    	movam_code = 		8'h41, //MOV A, RAM[ix]
    	movbm_code = 		8'h42, //MOV B, RAM[ix]
@@ -250,12 +250,12 @@ module Nano_cpu
    	movib_code = 		8'h4C, //MOV RAM[ix]->, B
    	movaipp_code = 		8'h4D, //MOV A, RAM[ix++]->
    	movbipp_code = 		8'h4E, //MOV B, RAM[ix++]->
-   	movrlipp_code = 		8'h4F, //MOV RL, RAM[ix++]->
+   	movrlipp_code = 	8'h4F, //MOV RL, RAM[ix++]->
    	movrhipp_code = 	8'h50, //MOV RH, RAM[ix++]->
    	movippa_code = 		8'h51, //MOV RAM[ix++]->, A
    	movippb_code = 		8'h52, //MOV RAM[ix++]->, B
-   	movmmia_code = 	8'h53, //MOV RAM[--ix]->, A
-   	movmmib_code = 	8'h54, //MOV RAM[--ix]->, B
+   	movmmia_code = 	    8'h53, //MOV RAM[--ix]->, A
+   	movmmib_code = 	    8'h54, //MOV RAM[--ix]->, B
    	movas_code = 		8'h55, //MOV A, STACK[usp]
    	movbs_code = 		8'h56, //MOV B, STACK[usp]
    	movrls_code = 		8'h57, //MOV RL, STACK[usp]
@@ -264,7 +264,7 @@ module Nano_cpu
    	movsb_code = 		8'h5A, //MOV STACK[usp], B
    	uadd_code = 		8'h5B, //A, B de 16 bits, sin signo, y R de 32 bits: R = UADD A,B 
    	sadd_code = 		8'h5C, //A, B de 16 bits, con signo, y R de 32 bits: R = SADD A,B 
-   	ac_code   = 			8'h5D, //ACC y R de 32 bits: ACC = ADD ACC,R 
+   	ac_code   = 		8'h5D, //ACC y R de 32 bits: ACC = ADD ACC,R 
    	umul_code = 		8'h5E, //A, B de 16 bits, sin signo, y R de 32 bits: R = UMUL A,B 
    	smul_code = 		8'h5F, //A, B de 16 bits, con signo, y R de 32 bits: R = SMUL A,B 
    	umac_code = 		8'h60, //A, B de 16 bits, sin signo, y R de 32 bits: R = UMUL A,B; ACC = ADD ACC,R 
@@ -272,14 +272,14 @@ module Nano_cpu
    	sracc_code = 		8'h62, // R = right shift ACC in A positions 
    	sraacc_code = 		8'h63, // R = arithmetic right shift ACC in A positions 
    	slacc_code = 		8'h64, // R = left shift ACC in A positions 
-   	nota_code = 			8'h65, //A de 16 bits: RL = not A 
+   	nota_code = 		8'h65, //A de 16 bits: RL = not A 
    	notb_code = 		8'h66, //A de 16 bits: RL = not B
-   	and_code  = 			8'h67, //A, B y R de 16 bits: RL = A AND B 
-   	or_code   = 			8'h68, //A, B y R de 16 bits: RL = A OR B
-   	xor_code  = 			8'h69, //A, B y R de 16 bits: RL = A XOR B
+   	and_code  = 		8'h67, //A, B y R de 16 bits: RL = A AND B 
+   	or_code   = 		8'h68, //A, B y R de 16 bits: RL = A OR B
+   	xor_code  = 		8'h69, //A, B y R de 16 bits: RL = A XOR B
    	incusp_code = 		8'h6A, //INC USP   
-   	incir_code = 			8'h6B, //INC I   
-   	incjr_code = 			8'h6C, //INC J   
+   	incir_code = 		8'h6B, //INC I   
+   	incjr_code = 		8'h6C, //INC J   
    	decusp_code = 		8'h6D, //DEC USP   
    	decir_code = 		8'h6E, //DEC I   
    	decjr_code = 		8'h6F, //DEC J   
@@ -287,10 +287,10 @@ module Nano_cpu
 	cmpjm_code = 		8'h71, //CMP J,M  (Compare J with M, i.e. R=J-M)
 	incmpm_code = 		8'h72, //INCMP M[i],M[i+1]  (Increment M[i] and compare with M[i+1], i.e. M[i]= M[i]+1; R=M[i]-M[i+1])
 	decmpm_code = 		8'h73, //DECMP M[i],M[i+1]  (Decrement M[i] and compare with M[i+1], i.e. M[i]= M[i]-1; R=M[i]-M[i+1])  	
-   	outa_code = 			8'h74, //MOV AL, Port[ix]
+   	outa_code = 		8'h74, //MOV AL, Port[ix]
    	ina_code = 			8'h75, //MOV Port[ix], AL 
-   	outk_code = 			8'h76, //MOV k, Port[ix]
-	stop_code = 			8'hFF; //Stop instruction
+   	outk_code = 		8'h76, //MOV k, Port[ix]
+	stop_code = 		8'hFF; //Stop instruction
 
    //-------------------------------------------------------------------------------
    // signal declaration
@@ -1843,6 +1843,10 @@ module Nano_cpu
            stkwe_next = 1'b1;
         push_f :
            stkwe_next = 1'b1;
+        default: 
+            begin 
+            // This explicitly does nothing
+            end
 	endcase
    end
 
