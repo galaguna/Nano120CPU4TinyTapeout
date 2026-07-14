@@ -1,7 +1,7 @@
 # tt_um_galaguna_NanoSys_fit: A minimal implementation for Nano120 CPU
 
 ## CPU features:
--	12-bit Instruction Pointer (only 256 ROM bytes, for code space, are implemented)
+-	12-bit Instruction Pointer (only 192 ROM bytes, for code space, are implemented)
 -	11-bit Data Pointer (only 32 RAM words, for data space, are implemented)
 -	8-bit Stack Pointer (only 16 stack words are implemented)
 -	Direct and indirect addressing operation
@@ -63,7 +63,7 @@ Additionally, the architecture includes the following internal registers that ar
 -	F register: 8-bit Flags register
 -	Instruction, H and L registers: 8-bit registers, used at instruction decode process to store op code and parameters values
 In this foundry implementation (with Tiny Tapeout initiative), due to physical space restrictions, the available memory resources are the following:
--	256 ROM bytes
+-	192 ROM bytes
 -	32 RAM words
 -	16 stack words
 
@@ -138,3 +138,5 @@ Within the slave_spi4nano module, the SCK frequency is assumed as CLK/8. For exa
 As practical reference, a master SPI module, may be found in the following repository:
 
 https://github.com/galaguna/Nano119-CPU-programmable-with-SPI
+
+
