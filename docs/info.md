@@ -1,4 +1,4 @@
-# tt_um_galaguna_NanoSys_fit: A minimal implementation for Nano120 CPU
+# tt_um_galaguna_NanoSys_fit: A minimal implementation for Nano-120 CPU (designed at Universidad Autonoma Metropolitana)
 
 ## CPU features:
 -	12-bit Instruction Pointer (only 192 ROM bytes, for code space, are implemented)
