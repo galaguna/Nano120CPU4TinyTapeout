@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
-  title:        "Nano 120 CPU"      # Project title
-  author:       "Gerardo Laguna-Sanchez"      # Your name
+  title:        "Nano-120_CPU@ler.uam.mx"      # Project title
+  author:       "Gerardo Laguna-Sanchez (UNIVERSIDAD AUTONOMA METROPOLITANA)"      # Your name
   discord:      "galaguna"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A basic CPU with 120 instructions, both code and data spaces implemented with generic RAM, and SPI communication support"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
